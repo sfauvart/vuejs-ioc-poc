@@ -2,16 +2,10 @@ const path = require('path');
 
 module.exports = {
   chainWebpack: config => {
-    const apiImpl = process.env.VUE_APP_API_CLIENT_IMPL || 'APIHTTPImpl'; // mock or server
-
+    // https://goenning.net/2017/07/21/how-to-avoid-relative-path-hell-javascript-typescript-projects/
     config.resolve.alias.set(
-      'api-impl',
-      path.resolve(__dirname, `src/api/${apiImpl}`)
-    );
-
-    config.resolve.alias.set(
-      'ioc-container',
-      path.resolve(__dirname, `src/ioc`)
+      '@app',
+      path.resolve(__dirname, `src/`)
     );
   },
 };

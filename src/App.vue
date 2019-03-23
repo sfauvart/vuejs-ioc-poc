@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Todos from './components/Todos.vue'
-import container from 'ioc-container'
+import Todos from '@app/components/Todos.vue'
+import { getServices } from '@app/ioc'
 
 export default {
   name: 'app',
@@ -20,7 +20,8 @@ export default {
     };
   },
   async created() {
-    this.todos = await container.services.myAPI.fetchTodos();
+    let api = await getServices('myAPI');
+    this.todos = await api.fetchTodos();
   },
 }
 </script>

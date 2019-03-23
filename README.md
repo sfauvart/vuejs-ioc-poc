@@ -22,7 +22,7 @@ Généralement fait via le pattern strategy, ici il est réalisé grâce aux ali
 Dans le fichier `vue.config.js` on retrouve un exemple concret avec `api-impl`.
 Via un fichier `.env.xxxx` il est possible de choisir entre une implémentation REST ou bouchonné Mock.
 L'avantage de cette technique est que le choix est fait au build, donc le code mock n'est pas dans la version minifié pour la production.
-Inconvénient, il faut relance `npm run serve` si on change la valeur dans `.env`
+Inconvénient, il faut relancer `npm run serve` si on change la valeur dans `.env`
 
 ## TODO
 
